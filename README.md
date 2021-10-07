@@ -1,13 +1,13 @@
 # conan-simpleamqpclient
 Conan recipe for [SimpleAmqpClient by alanxz](https://github.com/alanxz/SimpleAmqpClient)
 
-## Please note 
+## Notes 
 
 * only shared lib
 * no tests
 * slightly boilerplatey
 
-## build
+## Build
 
 ### Linux
 
