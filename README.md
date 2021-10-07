@@ -17,7 +17,7 @@ Conan recipe for [SimpleAmqpClient by alanxz](https://github.com/alanxz/SimpleAm
 
 ### Windows
 
-```conan create . simpleamqpclient/v2.5.1@conan/stable```
+```conan create . simpleamqpclient/v2.5.1@conan/stable --build missing```
 
 Tested with
 ```
