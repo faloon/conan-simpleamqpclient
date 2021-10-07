@@ -11,6 +11,6 @@ Conan recipe for SimpleAmqpClient by alanxz
 
 ### Linux
 
-´´´docker build . ´´´
+```docker build . ```
 
 ### Windows
