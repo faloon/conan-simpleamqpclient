@@ -7,6 +7,7 @@ Conan recipe for [SimpleAmqpClient by alanxz](https://github.com/alanxz/SimpleAm
 * only shared lib
 * no tests
 * slightly boilerplatey
+* plenty of room for improvement
 
 ## Build
 
