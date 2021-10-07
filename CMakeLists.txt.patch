@@ -1,0 +1,47 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index efefbfc..520bcf7 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -7,6 +7,11 @@ cmake_minimum_required(VERSION 3.5)
+ 
+ project(SimpleAmqpClient LANGUAGES CXX)
+ 
++include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
++conan_basic_setup(TARGET)
++set(Boost_USE_STATIC_LIBS ON)
++
++
+ set(CMAKE_CXX_STANDARD 98)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ set(CMAKE_CXX_EXTENSIONS OFF)
+@@ -48,13 +53,13 @@ if(Boost_Dynamic_Linking_ENABLED)
+   set(Boost_USE_STATIC_RUNTIME OFF)
+ endif()
+ 
+-find_package(Boost 1.47.0 COMPONENTS chrono system REQUIRED)
+-include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
+-link_directories(${Boost_LIBRARY_DIRS})
++#find_package(Boost 1.47.0 COMPONENTS chrono system REQUIRED)
++#include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
++#link_directories(${Boost_LIBRARY_DIRS})
+ 
+-set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/Modules)
+-find_package(Rabbitmqc REQUIRED)
+-INCLUDE_DIRECTORIES(SYSTEM ${Rabbitmqc_INCLUDE_DIRS})
++#set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/Modules)
++#find_package(Rabbitmqc REQUIRED)
++#INCLUDE_DIRECTORIES(SYSTEM ${Rabbitmqc_INCLUDE_DIRS})
+ 
+ option(ENABLE_SSL_SUPPORT "Enable SSL support." ${Rabbitmqc_SSL_ENABLED})
+ 
+@@ -133,7 +138,9 @@ set(SAC_LIB_SRCS
+ 
+ 
+ add_library(SimpleAmqpClient ${SAC_LIB_SRCS})
+-target_link_libraries(SimpleAmqpClient ${Rabbitmqc_LIBRARY} ${SOCKET_LIBRARY} ${Boost_LIBRARIES} $<$<BOOL:${Boost_Dynamic_Linking_ENABLED}>:Boost::dynamic_linking>)
++
++
++target_link_libraries(SimpleAmqpClient ${CONAN_LIBS} ${SOCKET_LIBRARY})
+ 
+ if (WIN32)
+   set_target_properties(SimpleAmqpClient PROPERTIES VERSION ${SAC_VERSION} OUTPUT_NAME SimpleAmqpClient.${SAC_SOVERSION})
