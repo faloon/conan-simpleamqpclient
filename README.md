@@ -3,7 +3,7 @@ Conan recipe for [SimpleAmqpClient by alanxz](https://github.com/alanxz/SimpleAm
 
 ## Notes 
 
-* probably used somebody else's template as a starting point, can't remember who or where
+* probably forked of [here](https://github.com/db4/conan-SimpleAmqpClient) some years ago
 * only shared lib
 * no tests
 * slightly boilerplatey
