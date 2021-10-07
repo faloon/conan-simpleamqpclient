@@ -14,3 +14,5 @@ Conan recipe for SimpleAmqpClient by alanxz
 ```docker build . ```
 
 ### Windows
+
+```conan create . simpleamqpclient/v2.5.1@conan/stable```
