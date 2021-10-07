@@ -1,5 +1,5 @@
 # conan-simpleamqpclient
-Conan recipe for SimpleAmqpClient by alanxz
+Conan recipe for [SimpleAmqpClient by alanxz](https://github.com/alanxz/SimpleAmqpClient)
 
 ## Please note 
 
